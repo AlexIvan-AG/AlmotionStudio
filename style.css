@@ -1,0 +1,582 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  background-image: url(/img/PatronFondo.jpg);
+  background-repeat: repeat;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  color: white;
+}
+
+header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+.logo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.navegador {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.navegador a {
+  text-decoration: none;
+  color: #000000;
+  padding: 6px 15px;
+  border-radius: 20px;
+  margin: 0 5px;
+  font-weight: 600;
+  transition: 0.5s;
+  white-space: nowrap;
+}
+
+.navegador a:hover,
+.navegador a.active {
+  background: #000000;
+  color: white;
+}
+
+.inicio {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+}
+
+.fondo {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.logo2 {
+  width: 90%;
+  animation: slideDown 2s ease forwards;
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  height: auto;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.presentacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: rgb(255, 255, 255);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.TextoDeGaleria {
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+.presentacion .texto {
+  flex: 1;
+  animation: slideLeft 2s ease forwards;
+  min-width: 280px;
+  color: black;
+}
+
+.presentacion .avatar {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  animation: slideRight 1.5s ease forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.galeria {
+  background-color: #000000;
+  background-image: url(/img/PatronFondo.jpg);
+  background-repeat: repeat;
+  padding: 50px 20px;
+}
+
+.galeria .bloque {
+  margin-bottom: 60px;
+}
+
+.galeria h2 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  flex: 1 1 calc(33.333% - 20px);
+  background-color: rgb(65, 65, 65);
+  padding: 5px;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.card:hover {
+  width: 120%;
+  max-width: 350px;
+  background-color: #ffffff;
+  transition: .5s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.295);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.5s ease;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 0 8px 8px 0;
+}
+
+.overlay span {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.overlay img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card:hover .overlay {
+  right: 0;
+}
+
+.servicios {
+  background-color: #000000;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.servicios h2 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.servicio {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.servicio:hover {
+  transform: scale(1.05);
+  filter: brightness(0.75);
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+.texto-popup ul {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.texto-popup ul li {
+  display: table-row;
+  border-bottom: 1px solid #333;
+  padding: 8px 0;
+}
+
+.texto-popup ul li::before {
+  content: "✔️";
+  display: table-cell;
+  padding-right: 10px;
+  color: #00aaff;
+  font-weight: bold;
+  vertical-align: middle;
+  width: 30px;
+  text-align: center;
+}
+
+.texto-popup ul li span {
+  display: table-cell;
+  padding-left: 5px;
+  vertical-align: middle;
+}
+
+.texto-popup ul li:last-child {
+  border-bottom: none;
+}
+.texto-popup {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.slider {
+  flex: 1;
+}
+
+.slider img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+footer {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-left {
+  flex: 1 1 300px;
+}
+
+.footer-left h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #00c3ff;
+}
+
+.footer-left p {
+  font-size: 0.95rem;
+  margin: 8px 0;
+  color: #3d3d3d;
+}
+
+.footer-right {
+  flex: 2 1 500px;
+}
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.red {
+  text-align: center;
+  width: 100px;
+}
+
+.red a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.red img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.red img:hover {
+  transform: scale(1.1);
+}
+
+.red p {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+/* Popup - Fondo */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+}
+
+/* Popup - Contenedor */
+.popup-content {
+  background: #121212;
+  color: #eee;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  padding: 30px;
+  gap: 30px;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Texto popup */
+.texto-popup {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ddd;
+  scrollbar-width: thin;
+  scrollbar-color: #555 transparent;
+}
+
+.texto-popup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.texto-popup::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+/* Título h3 */
+.texto-popup h3 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #00aaff;
+  font-weight: 700;
+  text-shadow: 0 0 6px #00aaffaa;
+}
+
+/* Párrafo */
+.texto-popup p {
+  white-space: pre-line;
+  color: #ccc;
+  font-weight: 500;
+}
+
+/* Slider */
+.slider {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00aaff88;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagen slider */
+.slider img.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Botón cerrar */
+.popup .cerrar {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 28px;
+  color: #00aaffcc;
+  cursor: pointer;
+  font-weight: 900;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.popup .cerrar:hover {
+  color: #00aaff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .presentacion {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .presentacion .texto {
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .presentacion .avatar {
+    width: 80%;
+    height: auto;
+  }
+
+  .navegador {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .galeria .fila {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .popup-content {
+    flex-direction: column;
+    height: auto;
+    max-height: 90vh;
+  }
+
+  .texto-popup {
+    max-height: 200px;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .slider {
+    flex: none;
+    height: 250px;
+    box-shadow: 0 0 12px #00aaff88;
+  }
+
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+}
